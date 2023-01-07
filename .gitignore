@@ -1,0 +1,4 @@
+# db
+prisma/*
+!migrations
+!*.prisma
