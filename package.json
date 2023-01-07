@@ -13,5 +13,8 @@
     "@prisma/client": "^4.8.1",
     "apollo-server": "^3.11.1",
     "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.8.1"
   }
 }
