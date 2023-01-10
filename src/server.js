@@ -9,7 +9,6 @@ const prisma = new PrismaClient();
 const resolvers = {
     Query: {
         info: () => "HackerNews",
-        feed: async (parent, args, context) => context.prisma.link.findMany(),
     },
     Mutation: {
         post: (parent, args, context) => {
@@ -25,7 +24,7 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-    typeDefs: fs.readFileSync(path.join(__dirname, "graphql/schema.graphql"), "utf-8"),
+    typeDefs: fs.readFileSync(path.join(__dirname, "graphql/schema/schema.graphql"), "utf-8"),
     resolvers,
     context: {
         prisma,

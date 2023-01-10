@@ -2,3 +2,6 @@
 prisma/*
 !migrations
 !*.prisma
+
+# env
+.env

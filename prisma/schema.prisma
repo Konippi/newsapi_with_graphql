@@ -11,8 +11,17 @@ datasource db {
 }
 
 model Link {
-  id          Int      @id @default(autoincrement())
-  created_at  DateTime @default(now())
-  url         String
-  description String?
+  id           Int      @id @default(autoincrement())
+  created_at   DateTime @default(now())
+  url          String
+  description  String?
+  posted_by    User?    @relation(fields: [posted_by_id], references: [id])
+  posted_by_id Int?
+}
+
+model User {
+  id     Int    @id @default(autoincrement())
+  name   String
+  passwd String @unique
+  links  Link[]
 }
